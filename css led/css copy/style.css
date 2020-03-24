@@ -1,0 +1,156 @@
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column wrap;
+    font-family: "Orator Std", sans-serif;
+    font-style: italic;
+    background-color: #f6be90;
+    color: white;
+}
+
+button {
+    font-family: "Orator Std", sans-serif;
+    background-color: #f08080;
+    border: none;
+    max-width: 80px;
+    color: white;
+    padding: 10px;
+    font-size: 16px;;
+    margin: 0px;
+}
+
+.entry {
+    font-family: "Orator Std", sans-serif;
+    padding: 10px;
+    border: none;
+    font-size: 16px;
+    margin: 10px, 0px;
+    width: 170px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: wrap;
+}
+
+.submission, p {
+    display: flex;
+    justify-content: center;
+}
+
+p {
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column wrap;
+}
+
+#pointer {
+    width: 0;
+    height: 0;
+    border-top: 30px solid #d2e7c4;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9;
+}
+
+.board {
+  width: 500px;
+  height: 500px;
+  position: relative;
+  border-radius: 50%;
+  margin: 40px;
+}
+
+.wheel {
+    width: 500px;
+    height: 500px;
+    position: relative;
+    border-radius: 50%;
+    animation: wheelSpin 5s linear;
+}
+
+.wheel {
+	width: 500px;
+	height: 500px;
+	border-radius: 50%;
+	position: relative;
+  overflow: hidden;
+}
+
+.sector {
+  position: absolute;
+  transform-origin: 100% 100%;
+  width: 5000px;
+  height: 5000px;
+  left: 50%;
+  top: 50%;
+  border: 1px solid white;
+  /* border-right: 250px solid transparent;
+  border-top: 250px solid #fffff0;
+  border-left: 250px solid transparent;
+  border-bottom: 250px solid transparent; */
+  margin-top: -5000px;
+  margin-left: -5000px;
+}
+
+.light {
+    position: absolute;
+    transform-origin: 100% 100%;
+    left: 50%;
+    top: 50%;
+    width: 5000px;
+    height: 5000px;
+    border-right: 250px solid transparent;
+    border-top: 250px solid #fffff0;
+    border-left: 250px solid transparent;
+    border-bottom: 250px solid transparent;
+    border-top-left-radius: 250px;
+    border-top-right-radius: 250px;
+    margin-top: -5000px;
+    margin-left: -5000px;
+}
+.dark {
+    position: absolute;
+    transform-origin: 100% 100%;
+    left: 50%;
+    top: 50%;
+    width: 5000px;
+    height: 5000px;
+    border: 1px solid #bb9990;
+    border-right: 250px solid transparent;
+    border-top: 250px solid #bb9990;
+    border-left: 250px solid transparent;
+    border-bottom: 250px solid transparent;
+    border-top-left-radius: 250px;
+    border-top-right-radius: 250px;
+    margin-top: -5000px;
+    margin-left: -5000px;
+}
+
+.numbers {
+    color: whitesmoke;
+    font-size: 30px;
+    position: absolute;
+    z-index: 400;
+    top: -15rem;
+    lefT: -1rem;
+}
+
+@keyframes wheelSpin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
