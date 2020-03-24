@@ -34,3 +34,29 @@ Psuedocode for the overall game play.
      - Weigh the wheel's number against the player's numbers
      - If the number matches with one of the player's, display YOU WIN!
    - Reinitialize when replay button is called (init function)
+
+
+
+
+
+   css translate -> add event listener -> add html
+
+
+
+   - init (reset)
+      - start it at 0
+   - render
+      - display win vs lose
+   - handleSpin (event listener)
+      - onclick takes number and caches it
+      - invoke findWinningNumber
+      - invoke spinTheWheel (function )
+      - collects the number from the spin
+      - calls render (function declaration)
+   - findWinningNumber
+      - generate winning number
+   - spinTheWheel
+      - animate the wheel
+      - stop at winning number
+   - checkResult
+      - check for win
