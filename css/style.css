@@ -54,12 +54,13 @@ p {
 #pointer {
     width: 0;
     height: 0;
-    border-top: 30px solid #faebd7;
+    border-top: 30px solid #d2e7c4;
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
+    z-index: 9;
 }
 
 #wheel {
@@ -71,7 +72,7 @@ p {
 }
 
 
-.red {
+.light {
     position: absolute;
     top: 0px;
     width: 0px;
@@ -84,7 +85,7 @@ p {
     border-top-right-radius: 250px;
 }
 
-.black {
+.dark {
     position: absolute;
     top: 0px;
     width: 0px;
