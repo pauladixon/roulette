@@ -67,28 +67,27 @@ function render(){
     message.innerHTML = "all bets are on number " + playerNumber.value + "!";
     if (playerNumber === spinNumber) {
         message.innerHTML = "you won!" + playerNumber.value + "is the winner!";
-    } else message.innerHTML = playerNumber.value + "didn't win this time. try again!";
+    } else message.innerHTML = playerNumber.value + " didn't win this time...";
 
 }
 
 
 
 
-// init (reset)
-// - start it at 0
-// render
-// - display win vs lose
 // handleSpin (event listener)
 // - onclick takes number and caches it
 // - invoke findWinningNumber
 // - invoke spinTheWheel (function )
 // - collects the number from the spin
 // - calls render (function declaration)
+
 // findWinningNumber
 // - generate winning number
+
 // spinTheWheel
 // - animate the wheel
 // - stop at winning number
+
 // checkResult
 // - check for win
 
