@@ -76,10 +76,9 @@ p {
     height: 500px;
     position: relative;
     border-radius: 50%;
-    background: #fffff0;
+    background-color: white;
     /* animation: wheelSpin 5s linear; */
 }
-
 
 /* .light {
     position: absolute;
@@ -121,7 +120,7 @@ p {
     position: absolute;
     z-index: 400;
     top: -15rem;
-    lefT: -1rem;
+    lef: -1rem;
 } */
 
 /* @keyframes wheelSpin {
