@@ -34,14 +34,15 @@ button {
     flex-flow: wrap;
 }
 
+#message {
+    font-size: 18px;
+    height: 20px;
+}
+
 .submission, p {
     display: flex;
     justify-content: center;
-}
-
-p {
-    display: flex;
-    justify-content: center;
+    align-items: center;
 }
 
 .container {
@@ -76,58 +77,14 @@ p {
     height: 500px;
     position: relative;
     border-radius: 50%;
-    background-color: white;
-    /* animation: wheelSpin 5s linear; */
+    animation: wheelSpin 15s linear infinite;
 }
 
-/* .light {
-    position: absolute;
-    transform-origin: 100% 100%;
-    left: 50%;
-    top: 50%;
-    width: 5000px;
-    height: 5000px;
-    border-right: 250px solid transparent;
-    border-top: 250px solid #fffff0;
-    border-left: 250px solid transparent;
-    border-bottom: 250px solid transparent;
-    border-top-left-radius: 250px;
-    border-top-right-radius: 250px;
-    margin-top: -5000px;
-    margin-left: -5000px;
-}
-.dark {
-    position: absolute;
-    transform-origin: 100% 100%;
-    left: 50%;
-    top: 50%;
-    width: 5000px;
-    height: 5000px;
-    border: 1px solid #bb9990;
-    border-right: 250px solid transparent;
-    border-top: 250px solid #bb9990;
-    border-left: 250px solid transparent;
-    border-bottom: 250px solid transparent;
-    border-top-left-radius: 250px;
-    border-top-right-radius: 250px;
-    margin-top: -5000px;
-    margin-left: -5000px;
-} */
-/* 
-.numbers {
-    color: whitesmoke;
-    font-size: 30px;
-    position: absolute;
-    z-index: 400;
-    top: -15rem;
-    lef: -1rem;
-} */
-
-/* @keyframes wheelSpin {
+@keyframes wheelSpin {
   0% {
     transform: rotate(0deg);
   }
   100% {
     transform: rotate(360deg);
   }
-} */
+}

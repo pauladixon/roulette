@@ -1,3 +1,79 @@
+
+// constants
+
+const numbers = [11, 2, 7, 20, 9, 14, 1, 24, 
+                15, 6, 19, 10, 3, 22, 17, 8, 
+                13, 4, 21, 16, 23, 12, 5, 18];
+
+// variables
+
+let startAngle = 0;
+let arc = Math.PI / 12;
+let ctx;
+let outerRadius = 250;
+let numRadius = 200;
+let innerRadius = 0;
+
+let spinNumber;
+
+// cached variables
+
+let canvas = document.getElementById("canvas");
+let playerNumber = document.querySelector("input");
+let message = document.getElementById("message");
+
+// // event listeners
+
+document.getElementById("submit").onclick = render;
+document.getElementById("reset").onclick = init;
+
+// functions
+
+function drawWheel() {
+    ctx = canvas.getContext("2d");
+    ctx.font = '22px "Orator Std", Arial';
+
+    for(let i = 0; i < 24; i++) {
+        let angle = startAngle + (i * arc);
+        if (i%2 === 0){
+            ctx.fillStyle = "#fffff0";
+        } else ctx.fillStyle = "#bb9990";
+    
+        ctx.beginPath();
+        ctx.arc(250, 250, outerRadius, angle, angle + arc, false);
+        ctx.arc(250, 250, innerRadius, angle + arc, angle, true);
+        ctx.fill();
+        ctx.save();
+        ctx.fillStyle = "#dae0e8";
+        ctx.translate(250 + Math.cos(angle + arc / 2) * numRadius,
+                        250 + Math.sin(angle + arc / 2) * numRadius);
+        ctx.rotate(angle + arc / 2 + Math.PI / 2);
+        
+        let number = numbers[i];
+        ctx.fillText(number, -ctx.measureText(number).width / 2, 0);
+        ctx.restore();
+    }
+}
+
+drawWheel();
+
+function init() {
+    playerNumber = null;
+    message.innerHTML = null;
+    spinNumber = null;
+}
+
+function render(){
+    message.innerHTML = "all bets are on number " + playerNumber.value + "!";
+    if (playerNumber === spinNumber) {
+        message.innerHTML = "you won!" + playerNumber.value + "is the winner!";
+    } else message.innerHTML = playerNumber.value + "didn't win this time. try again!";
+
+}
+
+
+
+
 // init (reset)
 // - start it at 0
 // render
@@ -16,90 +92,13 @@
 // checkResult
 // - check for win
 
-// $(document).ready(function(){
-
-//     // constants
-
-    const colors = ["#fffff0", "#bb9990", "#fffff0", "#bb9990", "#fffff0", "#bb9990", "#fffff0", "#bb9990", "#fffff0", "#bb9990", "#fffff0", "#bb9990", "#fffff0", "#bb9990", "#fffff0", "#bb9990", "#fffff0", "#bb9990", "#fffff0", "#bb9990", "#fffff0", "#bb9990", "#fffff0", "#bb9990"];
-    const restaraunts = [11, 2, 7, 20, 9, 14, 1, 24, 15, 6, 19, 10, 3, 22, 17, 8, 13, 4, 21, 16, 23, 12, 5, 18];
-
-//     // variables
-
-//     let startAngle = 0;
-//     let arc = Math.PI / 6;
-//     let ctx;
-
-//     // cached variables
-
-//     // event listeners
-
-//     $('#submit').click(function(event){
-//         let $playerNumber = $('#input').val();
-//         console.log($playerNumber);
-//     });
-
-    // functions
-
-
-let startAngle = 0;
-let arc = Math.PI / 12;
-
-
-let spinTimeout = null;
-let spinArcStart = 10;
-let spinTime = 0;
-let spinTimeTotal = 0;
-
-let ctx;
-   
-function drawWheel() {
-  let canvas = document.getElementById("canvas");
-  if (canvas.getContext) {
-    let outsideRadius = 250;
-    let textRadius = 200;
-    let insideRadius = 0;
-   
-    ctx = canvas.getContext("2d");
-    ctx.clearRect(0,0,500,500);
-    ctx.strokeStyle = "#f6be90";
-    ctx.font = '22px "Orator Std", Arial';
-   
-    for(let i = 0; i < 24; i++) {
-      let angle = startAngle + i * arc;
-      ctx.fillStyle = colors[i];
-     
-      ctx.beginPath();
-      ctx.arc(250, 250, outsideRadius, angle, angle + arc, false);
-      ctx.arc(250, 250, insideRadius, angle + arc, angle, true);
-      ctx.stroke();
-      ctx.fill();
-     
-      ctx.save();
-      ctx.fillStyle = "#add8e6";
-      ctx.translate(250 + Math.cos(angle + arc / 2) * textRadius,
-                    250 + Math.sin(angle + arc / 2) * textRadius);
-      ctx.rotate(angle + arc / 2 + Math.PI / 2);
-      let text = restaraunts[i];
-      ctx.fillText(text, -ctx.measureText(text).width / 2, 0);
-      ctx.restore();
-    }
-  }
-}
-
-draweWheel();
 
 
 
-
-
-
-
-
-
-
-
-
-
+// let spinTimeout = null;
+// let spinArcStart = 10;
+// let spinTime = 0;
+// let spinTimeTotal = 0;
 
 // function spin() {
 //   spinAngleStart = Math.random() * 10 + 10;
@@ -136,4 +135,4 @@ draweWheel();
 //   var ts = (t/=d)*t;
 //   var tc = ts*t;
 //   return b+c*(tc + -3*ts + 3*t);
-// }
+// 
