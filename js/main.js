@@ -3,14 +3,12 @@ const numbers = [11, 2, 7, 20, 9, 14, 1, 24,
                 15, 6, 19, 10, 3, 22, 17, 8, 
                 13, 4, 21, 16, 23, 12, 5, 18];
 
-
 let startAngle = 0;
 let arc = Math.PI / 12;
 let ctx;
 let outerRadius = 250;
 let numRadius = 200;
 let innerRadius = 0;
-
 let winningNumber;
 let winningSegment;
 let landingSpot;
@@ -19,7 +17,6 @@ let wheel = document.getElementById("wheel");
 let canvas = document.getElementById("canvas");
 let playerNumber = document.querySelector("input");
 let message = document.getElementById("message");
-
 
 document.getElementById("submit").onclick = handleSpin;
 document.getElementById("reset").onclick = init;
@@ -52,36 +49,36 @@ function drawWheel() {
 drawWheel();
 
 function init() {
-    playerNumber = null;
-    message.innerHTML = null;
-    winningNumber = null;
-    winningSegment = null;
-    wheel.style.animation = "wheelSpin 30s linear infinite";
+    location.reload();
+    // playerNumber = document.querySelector("input");
+    // message.innerHTML = null;
+    // winningNumber = null;
+    // winningSegment = null;
+    // wheel.style.animation = "wheelSpin 30s linear infinite";
 }
 
 function render(){
-    if (playerNumber == winningNumber) {
-        message.innerHTML = "you won!" + playerNumber.value + "is the winner!";
+    console.log(playerNumber.value);
+    if (playerNumber.value == winningNumber) {
+        message.innerHTML = "you won! " + playerNumber.value + " is the winner!";
     } else message.innerHTML = "..." + playerNumber.value + " didn't win this time";
 }
 
 function handleSpin(){
     message.innerHTML = "all bets are on number " + playerNumber.value + "!";
-    
     winningNumber = Math.floor(Math.random() * ((24-1)+1))+1;
     console.log(winningNumber);
-
     winningSegment = numbers.indexOf(winningNumber) + 1;
     landingSpot = (winningSegment * -15) + 997;
-    wheel.style.animation = "wheelSpin 8s linear";
+    wheel.style.animation = "wheelSpin 6s linear";
     stopWheel();
-};
+}
 
 function stopWheel(){
-    stop = setTimeout(function(){
+    landOnSpot = setTimeout(function(){
         wheel.style.transform = 'rotate('+landingSpot+'deg)'; 
     }, 1000);
     display = setTimeout(function(){
         render();
-    }, 7000);
+    }, 4000);
 }
