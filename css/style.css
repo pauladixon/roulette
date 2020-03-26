@@ -78,7 +78,6 @@ margin: 40px;
   position: relative;
   border-radius: 50%;
   transform: rotate(270deg);
-  animation: wheelSpin 30s linear infinite;
 }
 
 @keyframes wheelSpin {

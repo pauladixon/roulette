@@ -19,13 +19,12 @@ let playerNumber = document.querySelector("input");
 let message = document.getElementById("message");
 
 document.getElementById("submit").onclick = handleSpin;
-document.getElementById("reset").onclick = init;
+document.getElementById("reset").onclick = reset;
 
 
 function drawWheel() {
     ctx = canvas.getContext("2d");
     ctx.font = '22px "Orator Std", Arial';
-
     for(let i = 0; i < 24; i++) {
         let angle = startAngle + (i * arc);
         if (i%2 === 0){
@@ -44,32 +43,25 @@ function drawWheel() {
         ctx.fillText(number, -ctx.measureText(number).width / 2, 0);
         ctx.restore();
     }
+    wheel.style.animation = "wheelSpin 30s linear infinite";
 }
-
-drawWheel();
 
 function init() {
-    location.reload();
-    // playerNumber = document.querySelector("input");
-    // message.innerHTML = null;
-    // winningNumber = null;
-    // winningSegment = null;
-    // wheel.style.animation = "wheelSpin 30s linear infinite";
+    drawWheel();
+    generateLandingSpot();
+    playerNumber = document.querySelector("input");
+    message.innerHTML = null;
 }
 
-function render(){
-    console.log(playerNumber.value);
-    if (playerNumber.value == winningNumber) {
-        message.innerHTML = "you won! " + playerNumber.value + " is the winner!";
-    } else message.innerHTML = "..." + playerNumber.value + " didn't win this time";
-}
-
-function handleSpin(){
-    message.innerHTML = "all bets are on number " + playerNumber.value + "!";
+function generateLandingSpot() {
     winningNumber = Math.floor(Math.random() * ((24-1)+1))+1;
     console.log(winningNumber);
     winningSegment = numbers.indexOf(winningNumber) + 1;
     landingSpot = (winningSegment * -15) + 997;
+}
+
+function handleSpin(){
+    message.innerHTML = "all bets are on number " + playerNumber.value + "!";
     wheel.style.animation = "wheelSpin 6s linear";
     stopWheel();
 }
@@ -82,3 +74,16 @@ function stopWheel(){
         render();
     }, 4000);
 }
+
+function render(){
+    console.log(playerNumber.value);
+    if (playerNumber.value == winningNumber) {
+        message.innerHTML = "you won! " + playerNumber.value + " is the winner!";
+    } else message.innerHTML = "..." + playerNumber.value + " didn't win this time";
+}
+
+function reset(){
+    location.reload();
+}
+
+init();
