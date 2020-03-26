@@ -21,7 +21,6 @@ let message = document.getElementById("message");
 document.getElementById("submit").onclick = handleSpin;
 document.getElementById("reset").onclick = reset;
 
-
 function drawWheel() {
     ctx = canvas.getContext("2d");
     ctx.font = '22px "Orator Std", Arial';
