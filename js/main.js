@@ -60,29 +60,28 @@ function init() {
 }
 
 function render(){
-    message.innerHTML = "all bets are on number " + playerNumber.value + "!";
-
-    // if (playerNumber === winningNumber) {
-    //     message.innerHTML = "you won!" + playerNumber.value + "is the winner!";
-    // } else message.innerHTML = playerNumber.value + " didn't win this time...";
+    if (playerNumber == winningNumber) {
+        message.innerHTML = "you won!" + playerNumber.value + "is the winner!";
+    } else message.innerHTML = "..." + playerNumber.value + " didn't win this time";
 }
 
 function handleSpin(){
+    message.innerHTML = "all bets are on number " + playerNumber.value + "!";
+    
     winningNumber = Math.floor(Math.random() * ((24-1)+1))+1;
     console.log(winningNumber);
 
     winningSegment = numbers.indexOf(winningNumber) + 1;
-    console.log(winningSegment);
-    
     landingSpot = (winningSegment * -15) + 997;
-    wheel.style.animation = "wheelSpin 10s linear";
-
+    wheel.style.animation = "wheelSpin 8s linear";
     stopWheel();
 };
 
 function stopWheel(){
     stop = setTimeout(function(){
         wheel.style.transform = 'rotate('+landingSpot+'deg)'; 
-    }, 3000);
-    render();
+    }, 1000);
+    display = setTimeout(function(){
+        render();
+    }, 7000);
 }
