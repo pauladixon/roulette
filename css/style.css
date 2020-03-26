@@ -6,7 +6,8 @@ body {
   flex-flow: column wrap;
   font-family: "Orator Std", sans-serif;
   font-style: italic;
-  background-color: #f6be90;
+  background: #f6be90;
+  height: 900px;
   color: white;
 }
 

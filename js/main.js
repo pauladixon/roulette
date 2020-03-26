@@ -55,7 +55,6 @@ function init() {
 
 function generateLandingSpot() {
     winningNumber = Math.floor(Math.random() * ((24-1)+1))+1;
-    console.log(winningNumber);
     winningSegment = numbers.indexOf(winningNumber) + 1;
     landingSpot = (winningSegment * -15) + 997;
 }
@@ -76,7 +75,6 @@ function stopWheel(){
 }
 
 function render(){
-    console.log(playerNumber.value);
     if (playerNumber.value == winningNumber) {
         message.innerHTML = "you won! " + playerNumber.value + " is the winner!";
     } else message.innerHTML = "..." + playerNumber.value + " didn't win this time";
