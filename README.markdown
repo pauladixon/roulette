@@ -38,7 +38,6 @@ Psuedocode for the overall game play.
 
 
 
-
    css translate -> add event listener -> add html
 
 

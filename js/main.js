@@ -48,12 +48,10 @@ function drawWheel() {
 
 function init() {
     drawWheel();
-    generateLandingSpot();
-    playerNumber = document.querySelector("input");
-    message.innerHTML = null;
+    findLandingSpot();
 }
 
-function generateLandingSpot() {
+function findLandingSpot() {
     winningNumber = Math.floor(Math.random() * ((24-1)+1))+1;
     winningSegment = numbers.indexOf(winningNumber) + 1;
     landingSpot = (winningSegment * -15) + 997;
