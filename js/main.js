@@ -74,7 +74,7 @@ function stopWheel(){
 function render(){
     if (playerNumber.value == winningNumber) {
         message.innerHTML = "you won! "  + playerNumber.value + " wins this round!";
-    } else message.innerHTML = "aw, " + playerNumber.value + " didn't win this time";
+    } else message.innerHTML = "aw, " + playerNumber.value + " didn't win this time.";
 }
 
 function reset(){

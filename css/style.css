@@ -15,7 +15,6 @@ body {
   font-size: 16px;
   height: 20px;
   margin-bottom: 20px;
-  transition: text canvas2s ease 0s;
   text-align: center;
 }
 
@@ -90,7 +89,7 @@ input:focus {
 #wheel {
   width: 500px;
   height: 510px;
-  display: flex;
+    display: flex;
   justify-content: center;
   align-items: center;
   flex-flow: column wrap;
