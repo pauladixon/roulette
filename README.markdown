@@ -1,6 +1,6 @@
 # ROULETTE, BABY
 
-<img src="https://i.imgur.com/1scgB4Z.png" width=300>
+<img src="https://i.imgur.com/1scgB4Z.png" width=500>
 
 ## Background
 
