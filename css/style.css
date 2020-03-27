@@ -11,15 +11,36 @@ body {
   color: white;
 }
 
+#message {
+  font-size: 16px;
+  height: 20px;
+  margin-bottom: 20px;
+  transition: text canvas2s ease 0s;
+  text-align: center;
+}
+
 button {
   font-family: "Orator Std", sans-serif;
   background-color: #f08080;
   border: none;
-  max-width: 80px;
   color: white;
   padding: 10px;
   font-size: 16px;;
   margin: 0px;
+}
+
+button:focus {
+  outline: none;
+}
+
+input {
+  width: 170px;
+  color: #8b9dc3;
+  text-align: center;
+}
+
+input:focus {
+  outline: none;
 }
 
 .entry {
@@ -27,23 +48,17 @@ button {
   padding: 10px;
   border: none;
   font-size: 16px;
-  margin: 10px, 0px;
-  width: 170px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-flow: wrap;
 }
 
-#message {
-  font-size: 18px;
-  height: 20px;
-}
-
-.submission, p {
+.submission {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 40px;
 }
 
 .container {
@@ -66,17 +81,25 @@ button {
 }
 
 .board {
-width: 500px;
-height: 500px;
-position: relative;
-border-radius: 50%;
-margin: 40px;
+  width: 500px;
+  height: 500px;
+  position: relative;
+  margin: 20px 0px 50px 0px;
 }
 
 #wheel {
   width: 500px;
+  height: 510px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column wrap;
+}
+
+#canvas {
+  width: 500px;
   height: 500px;
-  position: relative;
+  position: absolute;
   border-radius: 50%;
   transform: rotate(270deg);
 }
@@ -86,6 +109,7 @@ margin: 40px;
     transform: rotate(0deg);
   }
   100% {
-    transform: rotate(1560deg);
+    transform: rotate(1920deg);
   }
 }
+

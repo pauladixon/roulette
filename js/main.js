@@ -13,7 +13,6 @@ let winningNumber;
 let winningSegment;
 let landingSpot;
 
-let wheel = document.getElementById("wheel");
 let canvas = document.getElementById("canvas");
 let playerNumber = document.querySelector("input");
 let message = document.getElementById("message");
@@ -42,10 +41,11 @@ function drawWheel() {
         ctx.fillText(number, -ctx.measureText(number).width / 2, 0);
         ctx.restore();
     }
-    wheel.style.animation = "wheelSpin 30s linear infinite";
+    canvas.style.animation = "wheelSpin 30s linear infinite";
 }
 
 function init() {
+    message.innerHTML = "pick a number between 1 & 24"
     drawWheel();
     findLandingSpot();
 }
@@ -57,24 +57,24 @@ function findLandingSpot() {
 }
 
 function handleSpin(){
-    message.innerHTML = "all bets are on number " + playerNumber.value + "!";
-    wheel.style.animation = "wheelSpin 6s linear";
+    message.innerHTML = "ok, all bets on number " + playerNumber.value + "...";
+    canvas.style.animation = "wheelSpin 8s linear";
     stopWheel();
 }
 
 function stopWheel(){
     landOnSpot = setTimeout(function(){
-        wheel.style.transform = 'rotate('+landingSpot+'deg)'; 
-    }, 1000);
+        canvas.style.transform = 'rotate('+landingSpot+'deg)'; 
+    }, 2000);
     display = setTimeout(function(){
         render();
-    }, 4000);
+    }, 6000);
 }
 
 function render(){
     if (playerNumber.value == winningNumber) {
-        message.innerHTML = "you won! " + playerNumber.value + " is the winner!";
-    } else message.innerHTML = "..." + playerNumber.value + " didn't win this time";
+        message.innerHTML = "you won! "  + playerNumber.value + " wins this round!";
+    } else message.innerHTML = "aw, " + playerNumber.value + " didn't win this time";
 }
 
 function reset(){
