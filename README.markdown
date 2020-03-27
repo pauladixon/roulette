@@ -1,6 +1,6 @@
 # ROULETTE, BABY
 
-<img src="https://i.imgur.com/1scgB4Z.png" alt="image of browser roulette game" style="width:200px;"/>
+<img src="https://i.imgur.com/1scgB4Z.png" width=300 align=center>
 
 ## Background
 
@@ -28,8 +28,7 @@ All you have to do is plug in your lucky number and give it a whirl. Don't worry
   In future iterations, I imagine adding the a version of a roulette betting board, where a player would be able to place bets manually by clicking and placing chips on a basic board such as this:
 
 
-  <img src="https://i.imgur.com/TqXwh6J.png" alt="image of a simple roulette betting board" style="width:200px;"/>
-  
+  <img src="https://i.imgur.com/TqXwh6J.png" width=300 align=center>
 
   In this iteration a player might have 3 chips and be able to place them either on 3 different numbers or all on the same number for a higher score. This version would also include an area for score keeping and give the player a limited number of rounds, perhaps even tracking the highest score for the game.
 
