@@ -1,5 +1,6 @@
 
 body {
+  padding-top: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -7,7 +8,7 @@ body {
   font-family: "Orator Std", sans-serif;
   font-style: italic;
   background: #f6be90;
-  height: 900px;
+  height: 100%;
   color: white;
 }
 
@@ -112,6 +113,13 @@ input:focus {
   }
 }
 
+footer {
+  width: 100%;
+  text-align: right;
+  margin-top: 35px;
+  color: whitesmoke;
+  opacity: 50%;
+}
 
 
 @media only screen 
@@ -122,11 +130,8 @@ input:focus {
 
   body {
       -webkit-tap-highlight-color: transparent;
-      height: 100%;
-  }
-
-  header {
-    margin-top: 10px;
+      height: 100vh;
+      padding-top: 0px;
   }
 
   #canvas {
@@ -147,7 +152,8 @@ input:focus {
     -webkit-tap-highlight-color: transparent;
   }
 
-  /* #pointer {
-    margin-top: 75px;
-  } */
+  footer {
+
+    opacity: 0%;
+  }
 }
