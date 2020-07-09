@@ -5,7 +5,8 @@ body {
   justify-content: center;
   align-items: center;
   flex-flow: column wrap;
-  font-family: "Orator Std", sans-serif;
+  font-family: orator-std, monospace;
+  text-transform: lowercase;
   font-style: italic;
   background: #f6be90;
   height: 100%;
