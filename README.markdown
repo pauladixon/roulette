@@ -2,7 +2,7 @@
 
 ## Link:
 
-[View the App](https://pauladixon.github.io/roulette/)
+[View the App](https://pauladixon.software/roulette/)
 
 
 ## Screenshots:
