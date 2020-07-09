@@ -112,3 +112,42 @@ input:focus {
   }
 }
 
+
+
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: portrait) { 
+
+  body {
+      -webkit-tap-highlight-color: transparent;
+      height: 100%;
+  }
+
+  header {
+    margin-top: 10px;
+  }
+
+  #canvas {
+      width: 350px !important;
+      height: 350px !important;
+      -webkit-tap-highlight-color: transparent;
+  }
+
+  #wheel {
+    width: 350px !important;
+    height: 360px !important;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .board {
+    width: 350px !important;
+    height: 350px !important;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* #pointer {
+    margin-top: 75px;
+  } */
+}
