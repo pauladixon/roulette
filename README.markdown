@@ -16,6 +16,8 @@ Roulette is a popular casino game in which gamblers place bets wagering on which
 
 All you have to do is plug in your lucky number and give it a whirl. Don't worry if you don't get it the first time - you can always press reset and try again!
 
+This web app is additionally optimized for use on iOS Chrome.
+
 
 ## Technologies Used:
 
